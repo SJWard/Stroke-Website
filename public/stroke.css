@@ -255,3 +255,8 @@ img {
     z-index: 2;
 }
 
+table #patientlist {
+        float:left;
+        width:45%;
+
+}
