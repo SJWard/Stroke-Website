@@ -82,9 +82,12 @@ $(function() {
     //console.log($(this).text());
 }}
 
+var currentRow;
+var uniqueID;
+
   $('#patientlist').on('click', '.btnSelect', function() {
-     var currentRow=$(this).closest("tr");
-     var uniqueID=currentRow.find("td:eq(0)").text();
+     currentRow=$(this).closest("tr");
+     uniqueID=currentRow.find("td:eq(0)").text();
      $('.pData').hide();
      $(currentRow).show();
      console.log(uniqueID);
@@ -94,18 +97,8 @@ $('.showPatients').on('click', function() {
      $('.pData').show();
     });
 
-            
-  
-
-  
-
-
-  
                       /*$("#"+i+"").on("click", function(){
                         console.log(name);*/
-    
-
-  
  
 /*
 $("#patientlist").on("click", "tr", function(event){
@@ -119,7 +112,7 @@ console.log(name);
 //NOTE NOTE NOTE NOTE make new variable called fullName and make it name+surname and then just have that as a columm so can search whole name
         
               var i = 1;
-
+var a = 0;
 function exerciseData(data) {
   
 refChild.once("value", function(snapshot) {
@@ -128,11 +121,8 @@ refChild.once("value", function(snapshot) {
         //console.log(child.key+": "+child.val());
         var a =  child.val();
         var b = a.replace("_", " ").replace("_", " ").replace("_", " ").replace("_", " ");
-        document.getElementById("exerciselist").innerHTML += ("<tr class='eData'>" + "<td>" + b + "</td>" +  "<th>" +
-            "<form> <input type='checkbox' class='excSelect'> </button> </form>" + "</th>" + "<tr>");
-             
-            
-          
+        document.getElementById("exerciselist").innerHTML += ("<tr>" + "<td class='eData'>" + b + "</td>" +  "<th>" +
+            "<form> <input type='checkbox' class='excSelect'> </button> </form>" + "</th>" + "<tr>");  
     }
   });
 });
@@ -140,9 +130,15 @@ refChild.once("value", function(snapshot) {
 $(".setExercises").click(function(event){
     event.preventDefault();
     var searchIDs = $("#exerciselist input:checkbox:checked").map(function(){
-   return $(this).val();
-    }).get(); // <----
-    console.log(searchIDs);
+     var currentRow=$(this).closest("tr");
+     var exerciseName=currentRow.find("td:eq(0)").text();
+     refChild = ref.child("Testing");
+     a++;
+     refChild.child(uniqueID).push({
+  [a]: exerciseName
+
+     }); 
+    });
 });
 /*
 $('#exerciselist').on('click', '.excSelect', function() {
@@ -165,6 +161,10 @@ var exercisesChosen = [];
 
 });
  
+  
+
+  
+
   /*
   $("#patientlist").on("click", function(){
 var databaseRef =  ref.child('Testing');

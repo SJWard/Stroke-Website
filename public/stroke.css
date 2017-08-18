@@ -260,3 +260,7 @@ table #patientlist {
         width:45%;
 
 }
+
+.keycolumn {
+  style:'display:none';
+}
