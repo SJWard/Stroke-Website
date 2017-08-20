@@ -8,37 +8,28 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
 
     <title>Stroker | Therapist</title>
 
     <!-- Import Lato font -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300|Lato|Open+Sans" rel="stylesheet">
-
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap theme -->
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="signin.css" rel="stylesheet">
-
     <!-- Custom styles for this template -->
     <link href="stroke.css" rel="stylesheet">
+
+    <link href="exercisePage.css" rel="stylesheet">
+
 
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" charset="utf8" src="/js/jquery.dataTables.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
     <script src="js/patientsExercises.js"></script>
     <script type="text/javascript"> </script>
-    <script src="jquery-1.6.1.js"></script>
 
 
 
@@ -88,21 +79,34 @@
         </div>
     </nav>
 
-<h1> Patient List </h1>
+<h2 class='patientheader'> Patients</h1>
 
-<input type="text" id="patSearchBar" onkeyup="myFunction()" placeholder="Search for names">
+<input type="text" id="patSearchBar" class="patSearchBar" onkeyup="myFunction()" placeholder="Search for names">
+
+<br></br>
 
 <table id="patientlist" border='1' align='center'>
 <tr> <th> key </th> <th> First name </th><th> Surname </th><th> Email </th></tr>
 </table>
+
+<br></br>
+
 <button class="showPatients" type='button'>Show all Patients </button>
-<h1> Exercise List </h1>
-<button class='setExercises' type='button'>Set Exercises </button>
-<input type="text" id="excSearchBar" onkeyup="exerciseData()" placeholder="Search for names">
+<br></br>
+
+<h2 class="exerciseheader"> Exercises </h2>
+
+<input type="text" id="excSearchBar" class="excSearchBar" onkeyup="exerciseData()" placeholder="Search for names">
+
+<br></br>
+
 
 <table id="exerciselist" border='1' align='center'>
 <tr><th> Exercises </tr> </th>
 </table>
+<br></br>
+
+<button class='setExercises' type='button'>Set Exercises </button>
 
 <script>
   
@@ -116,7 +120,7 @@ function myFunction() {
   row = table.getElementsByTagName("tr");
 
   for (a = 0; a < row.length; a++) {
-    content = row[a].getElementsByTagName("td")[0];
+    content = row[a].getElementsByTagName("td")[1];
     if (content) {
       if (content.innerHTML.toUpperCase().indexOf(search) > -1) {
         row[a].style.display = "";

@@ -19,6 +19,7 @@ footer {
     height: 60px;
     Width: 100%;
     bottom: 0;
+    position: relative;
 }
 
 h1 {
@@ -255,12 +256,3 @@ img {
     z-index: 2;
 }
 
-table #patientlist {
-        float:left;
-        width:45%;
-
-}
-
-.keycolumn {
-  style:'display:none';
-}
