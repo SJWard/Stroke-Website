@@ -17,7 +17,7 @@ $(function() {
     password: '',
   };
 
-$('.js-login').on('#submit', event => {
+$('.js-login').on('submit', event => {
   const email = $('#js-email').val() || state.email;
   const password = $('#js-password').val() || state.password;
 
