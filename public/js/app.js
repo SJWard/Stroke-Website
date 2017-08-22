@@ -17,6 +17,19 @@ $(function() {
     password: '',
   };
 
+$('.js-login').on('#submit', event => {
+  const email = $('#js-email').val() || state.email;
+  const password = $('#js-password').val() || state.password;
+
+  firebase.auth().signInWithEmailAndPassword(email, password).then(function(firebaseUser) {
+    var errorCode = error.code;
+      var errorMessage = error.message;
+    
+  })
+  .catch(function(error) {
+      // Error Handling
+  });
+});
   $('.js-form').on('submit', event => {
     event.preventDefault();
     const email = $('#js-email').val() || state.email;
