@@ -87,7 +87,7 @@ function exerciseData(data) {
 //On click sends data to Firebase
 $(".setExercises").click(function(event){
 //refExercises is instantiated by the parent node the data is to be sent to
-    refExercises = ref.child("Testing");
+    refExercises = ref.child("CustomWorkouts");
 //.remove() clears the old data
     refExercises.child(uniqueID).remove();
     event.preventDefault();
