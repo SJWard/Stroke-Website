@@ -37,7 +37,7 @@ $(function() {
       var surname = patients[key].surname;
 //list of names to be held in array
       var namelist = [];
-      namelist.push(name); // ******** DELETE THIS?
+      namelist.push(name); 
 //producing a table with the unique ID key, name, surname and email and a select button.
       document.getElementById("patientlist").innerHTML += ("<tr class='pData'>" + "<td id='keycolumn' class='sorting_1'>" +  key +  "</td>" + "<td>" + name + "</td>" + "<td>" + surname + "</td>" +  "<td>" + email + "</td>" + "<td>" +
             "<form> <button id='buttonname' type='button' class='btnSelect' > Select </button> </form>" + "</td>" + "</tr>");

@@ -32,7 +32,7 @@ $('.js-login').on('submit', event => {
     event.preventDefault();
     const email = $('#js-email').val() || state.email;
     const password = $('#js-password').val() || state.password;
-    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+    firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
       var errorCode = error.code;
       var errorMessage = error.message;
 
